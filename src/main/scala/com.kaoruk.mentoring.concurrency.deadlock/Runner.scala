@@ -13,8 +13,9 @@ import java.util.concurrent.ThreadLocalRandom
  *
  */
 object Runner extends App {
-  val islandOne = Island(500)
-  val islandTwo = Island(500)
+  case object Lock
+  val islandOne = Island(500, Lock)
+  val islandTwo = Island(500, Lock)
 
   // Sleep creates some indeterminism
   val islandOneShipments = (1 to 40).map(_ => {
